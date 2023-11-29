@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_action_role">
+    <sys_ui_action_role action="INSERT_OR_UPDATE">
+        <sys_class_name>sys_ui_action_role</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-12-03 09:38:46</sys_created_on>
+        <sys_id>d364c030db6184108ce6c082ba961965</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Social -Powered by Sprinklr.x_spri3_sprinklr.user</sys_name>
+        <sys_package display_value="Sprinklr" source="x_spri3_sprinklr">43e225141bc08410e05799f4bd4bcbd0</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Sprinklr">43e225141bc08410e05799f4bd4bcbd0</sys_scope>
+        <sys_ui_action display_value="Sprinklr">2ba271811b68c410e05799f4bd4bcb53</sys_ui_action>
+        <sys_update_name>sys_ui_action_role_d364c030db6184108ce6c082ba961965</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-12-03 09:38:46</sys_updated_on>
+        <sys_user_role display_value="x_spri3_sprinklr.user" name="x_spri3_sprinklr.user">d7e2e1581bc08410e05799f4bd4bcb2a</sys_user_role>
+    </sys_ui_action_role>
+</record_update>

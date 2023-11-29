@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element attributes="live_feed=false" db_object_id="41820356d73022004f1e82285e61031f" label="รายการบันทึกทางสังคม" max_length="40" name="sn_app_cs_social_social_log" type="collection">
+        <element label="Universal Message ID" max_length="1000" name="x_spri3_sprinklr_universal_message_id" type="string"/>
+    </element>
+</database>

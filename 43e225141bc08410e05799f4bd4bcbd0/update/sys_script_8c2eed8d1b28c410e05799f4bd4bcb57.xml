@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script">
+    <sys_script action="INSERT_OR_UPDATE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>false</action_delete>
+        <action_insert>false</action_insert>
+        <action_query>false</action_query>
+        <action_update>true</action_update>
+        <active>true</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>sn_customerservice_case</collection>
+        <condition/>
+        <description/>
+        <execute_function>false</execute_function>
+        <filter_condition table="sn_customerservice_case">x_spri3_sprinklr_sprcasenumberANYTHING^EQ<item endquery="false" field="x_spri3_sprinklr_sprcasenumber" goto="false" newquery="false" operator="ANYTHING" or="false" value=""/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </filter_condition>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>Sprinklr_Sync</name>
+        <order>100</order>
+        <priority>1</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
+
+	var body;
+
+	try{
+		var caseHandler = new sn_customerservice.CaseDao();
+		var json = caseHandler.prepareCaseObject(current);
+		json.entityType = 'case';
+		json.operation = current.operation();
+		body = JSON.stringify(json);
+		gs.info('Payload genereated : ' + body);
+	}catch(ex){
+		gs.error(ex);
+	}
+	
+	var r;
+	try{
+		r = new sn_ws.RESTMessageV2('SprinklrCrm2socialLink', 'POST');
+		r.setStringParameter("env", gs.getProperty('x_spri3_sprinklr.subdomain'));
+		r.setRequestHeader("Accept","application/json");
+		r.setRequestHeader('Content-Type','application/json');
+		r.setRequestHeader('key',gs.getProperty('x_spri3_sprinklr.oauth.clientid')); // client Id to be fetched and added here
+		r.setRequestBody(body);
+		var response = r.execute();
+		gs.info("x_spri3_sprinklr.oauth.clientid : "+ gs.getProperty('x_spri3_sprinklr.oauth.clientid'));
+		gs.info("Response Recieved :  " +response.getStatusCode()+ response.getBody() );
+	}
+	catch(ex) {
+		gs.error(ex);
+	}
+
+})(current, previous);]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-10-15 18:12:00</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>8c2eed8d1b28c410e05799f4bd4bcb57</sys_id>
+        <sys_mod_count>19</sys_mod_count>
+        <sys_name>Sprinklr_Sync</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Sprinklr" source="x_spri3_sprinklr">43e225141bc08410e05799f4bd4bcbd0</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Sprinklr">43e225141bc08410e05799f4bd4bcbd0</sys_scope>
+        <sys_update_name>sys_script_8c2eed8d1b28c410e05799f4bd4bcb57</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-07-19 14:27:39</sys_updated_on>
+        <template/>
+        <when>async_always</when>
+    </sys_script>
+    <sys_translated_text action="delete_multiple" query="documentkey=8c2eed8d1b28c410e05799f4bd4bcb57"/>
+</record_update>

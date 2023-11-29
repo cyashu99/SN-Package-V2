@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ws_operation">
+    <sys_ws_operation action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <consumes>application/json,application/xml,text/xml</consumes>
+        <consumes_customized>false</consumes_customized>
+        <default_operation_uri/>
+        <enforce_acl>8167bbdb47f999104dfe0652736d4360</enforce_acl>
+        <http_method>GET</http_method>
+        <name>getDomain</name>
+        <operation_script><![CDATA[(function process(/*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {
+
+	var subdomain = gs.getProperty('x_spri3_sprinklr.subdomain');
+    var body = {};
+	body.subdomain = subdomain;
+	response.setBody(body);
+
+})(request, response);]]></operation_script>
+        <operation_uri>/api/x_spri3_sprinklr/spr_domain_api</operation_uri>
+        <produces>application/json,application/xml,text/xml</produces>
+        <produces_customized>false</produces_customized>
+        <relative_path>/</relative_path>
+        <request_example/>
+        <requires_acl_authorization>true</requires_acl_authorization>
+        <requires_authentication>true</requires_authentication>
+        <requires_snc_internal_role>true</requires_snc_internal_role>
+        <short_description/>
+        <sys_class_name>sys_ws_operation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-09-08 08:50:44</sys_created_on>
+        <sys_id>518a9d3d47f155104dfe0652736d4337</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>getDomain</sys_name>
+        <sys_package display_value="Sprinklr" source="x_spri3_sprinklr">43e225141bc08410e05799f4bd4bcbd0</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Sprinklr">43e225141bc08410e05799f4bd4bcbd0</sys_scope>
+        <sys_update_name>sys_ws_operation_518a9d3d47f155104dfe0652736d4337</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-09-13 12:34:24</sys_updated_on>
+        <web_service_definition display_value="spr_domain_api">7679593d47f155104dfe0652736d437e</web_service_definition>
+        <web_service_version/>
+    </sys_ws_operation>
+</record_update>

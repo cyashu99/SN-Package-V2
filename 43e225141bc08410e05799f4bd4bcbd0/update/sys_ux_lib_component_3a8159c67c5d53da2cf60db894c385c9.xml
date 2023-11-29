@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ux_lib_component">
+    <sys_ux_lib_component action="INSERT_OR_UPDATE">
+        <default_children/>
+        <default_layout/>
+        <deprecated>false</deprecated>
+        <inner_components/>
+        <overrides/>
+        <required_sys_props/>
+        <required_translation_keys/>
+        <required_user_prefs/>
+        <source_script/>
+        <source_script_name>case-conversations</source_script_name>
+        <sys_class_name>sys_ux_lib_component</sys_class_name>
+        <sys_created_by>tectonic</sys_created_by>
+        <sys_created_on>2022-08-23 03:57:14</sys_created_on>
+        <sys_id>3a8159c67c5d53da2cf60db894c385c9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>spri3-case-conversations</sys_name>
+        <sys_package display_value="Sprinklr" source="x_spri3_sprinklr">43e225141bc08410e05799f4bd4bcbd0</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Sprinklr">43e225141bc08410e05799f4bd4bcbd0</sys_scope>
+        <sys_update_name>sys_ux_lib_component_3a8159c67c5d53da2cf60db894c385c9</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-08-22 22:27:27</sys_updated_on>
+        <tag>spri3-case-conversations</tag>
+    </sys_ux_lib_component>
+</record_update>

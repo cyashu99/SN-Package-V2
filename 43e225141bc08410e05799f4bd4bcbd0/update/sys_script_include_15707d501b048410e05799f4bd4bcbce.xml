@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_spri3_sprinklr.OAuthUtilSprinklr</api_name>
+        <caller_access/>
+        <client_callable>true</client_callable>
+        <description/>
+        <name>OAuthUtilSprinklr</name>
+        <script><![CDATA[var OAuthUtilSprinklr = Class.create();
+OAuthUtilSprinklr.prototype = {
+    initialize: function() {
+    },
+	interceptRequestParameters : function(requestParamMap) {
+		// Add/Modify request parameters if needed
+		this.preprocessAccessToken(requestParamMap);
+	},
+	
+	parseTokenResponse: function(accessTokenResponse) {
+		this.postprocessAccessToken(accessTokenResponse);
+	},
+	
+	preprocessAuthCode: function(requestParamMap) {
+	},
+	
+	preprocessAccessToken: function(requestParamMap) {
+	},
+	
+	postprocessAccessToken: function(accessTokenResponse) {
+		var contentType = accessTokenResponse.getContentType();
+		var contentBody = accessTokenResponse.getBody();
+		
+// 		contentType = "application/json";
+		gs.info('OauthUtilSprinklr::: postprocessAccessToken: contentType=' + contentType + ' contentBody=' + contentBody);
+		gs.info('OauthUtilSprinklr::: postprocessAccessToken: contentBody Type = ' + typeof(contentBody));
+		if (contentType && contentType.indexOf('application/json') != -1) {
+			var tokenResponse = (new global.JSON()).decode(accessTokenResponse.getBody());
+			var paramMap = accessTokenResponse.getparameters();
+			
+			for (var param in tokenResponse){
+				paramMap.put(param, tokenResponse[param].toString());
+			}
+		}
+	},
+
+    type: 'OAuthUtilSprinklr'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-09-18 13:49:06</sys_created_on>
+        <sys_id>15707d501b048410e05799f4bd4bcbce</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>OAuthUtilSprinklr</sys_name>
+        <sys_package display_value="Sprinklr" source="x_spri3_sprinklr">43e225141bc08410e05799f4bd4bcbd0</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Sprinklr">43e225141bc08410e05799f4bd4bcbd0</sys_scope>
+        <sys_update_name>sys_script_include_15707d501b048410e05799f4bd4bcbce</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-12-03 08:20:13</sys_updated_on>
+    </sys_script_include>
+</record_update>

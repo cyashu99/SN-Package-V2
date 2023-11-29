@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_widgets">
+    <sys_widgets action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <name>TestWidget</name>
+        <order>100</order>
+        <renderer/>
+        <renderer_type>javascript</renderer_type>
+        <roles>x_spri3_sprinklr.user</roles>
+        <script><![CDATA[function sections() {
+    return {
+        'widget_name': { 'sprinklr_iframe' : 'sprinklr_iframe'},
+        'widget_name2': {'sprinklr_iframe': 'sprinklr_iframe'}
+    };
+}
+
+function render() {
+    var uiPageName = renderer.getPreferences().get("sprinklr_iframe");
+    return renderer.getRenderedPage(sprinklr_iframe);
+}
+
+function getEditLink() {
+    var uiPageName = renderer.getPreference('sprinklr_iframe');
+    return 'sys_ui_page.do?sysparm_query=' + encodeURIComponent('name=' + sprinklr_iframe);
+}]]></script>
+        <sys_class_name>sys_widgets</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-04-10 19:18:08</sys_created_on>
+        <sys_id>5049621a1b0c1410e05799f4bd4bcbe9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>TestWidget</sys_name>
+        <sys_package display_value="Sprinklr" source="x_spri3_sprinklr">43e225141bc08410e05799f4bd4bcbd0</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Sprinklr">43e225141bc08410e05799f4bd4bcbd0</sys_scope>
+        <sys_update_name>sys_widgets_5049621a1b0c1410e05799f4bd4bcbe9</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-04-10 19:18:08</sys_updated_on>
+        <top_level_category>false</top_level_category>
+    </sys_widgets>
+</record_update>
