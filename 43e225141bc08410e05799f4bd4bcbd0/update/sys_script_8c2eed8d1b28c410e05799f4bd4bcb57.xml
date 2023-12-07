@@ -39,7 +39,6 @@
 		json.entityType = 'case';
 		json.operation = current.operation();
 		body = JSON.stringify(json);
-		gs.info('Payload genereated : ' + body);
 	}catch(ex){
 		gs.error(ex);
 	}
@@ -53,8 +52,6 @@
 		r.setRequestHeader('key',gs.getProperty('x_spri3_sprinklr.oauth.clientid')); // client Id to be fetched and added here
 		r.setRequestBody(body);
 		var response = r.execute();
-		gs.info("x_spri3_sprinklr.oauth.clientid : "+ gs.getProperty('x_spri3_sprinklr.oauth.clientid'));
-		gs.info("Response Recieved :  " +response.getStatusCode()+ response.getBody() );
 	}
 	catch(ex) {
 		gs.error(ex);
@@ -67,7 +64,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>8c2eed8d1b28c410e05799f4bd4bcb57</sys_id>
-        <sys_mod_count>19</sys_mod_count>
+        <sys_mod_count>20</sys_mod_count>
         <sys_name>Sprinklr_Sync</sys_name>
         <sys_overrides/>
         <sys_package display_value="Sprinklr" source="x_spri3_sprinklr">43e225141bc08410e05799f4bd4bcbd0</sys_package>
@@ -75,7 +72,7 @@
         <sys_scope display_value="Sprinklr">43e225141bc08410e05799f4bd4bcbd0</sys_scope>
         <sys_update_name>sys_script_8c2eed8d1b28c410e05799f4bd4bcb57</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-07-19 14:27:39</sys_updated_on>
+        <sys_updated_on>2023-12-07 19:19:15</sys_updated_on>
         <template/>
         <when>async_always</when>
     </sys_script>
