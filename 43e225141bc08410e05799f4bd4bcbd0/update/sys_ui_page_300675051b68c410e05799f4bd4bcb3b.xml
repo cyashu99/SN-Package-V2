@@ -3,20 +3,16 @@
         <category>general</category>
         <client_script><![CDATA[var caseId = g_form.getUniqueValue();
 var caseNumber = g_form.getValue('number');
-var subDomain = 'space';                       //default
-jslog(caseId);
-jslog("Fetching data for case number : " + caseNumber );
+var subDomain = 'space';
 
 var ga = new GlideAjax('SprinklrConfig');
 ga.addParam('sysparm_name', 'subDomain');
 ga.getXMLAnswer(function (response) {	
 	subDomain = response || subDomain;
-	jslog(response);
 	var iframeElement = document.getElementById('sprinklr_iframe');
 	
 	var url = 'https://' + subDomain + '.sprinklr.com/external/quickView?qTyp=UNIVERSAL_CASE&qId=CCN_' + encodeURIComponent(caseNumber) + '&testParam=trackThis';	
 	iframeElement.src = url;	
-	jslog(url);
 });
 
 
@@ -35,13 +31,13 @@ ga.getXMLAnswer(function (response) {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2019-10-15 18:40:40</sys_created_on>
         <sys_id>300675051b68c410e05799f4bd4bcb3b</sys_id>
-        <sys_mod_count>57</sys_mod_count>
+        <sys_mod_count>58</sys_mod_count>
         <sys_name>sprinklr_iframe</sys_name>
         <sys_package display_value="Sprinklr" source="x_spri3_sprinklr">43e225141bc08410e05799f4bd4bcbd0</sys_package>
         <sys_policy/>
         <sys_scope display_value="Sprinklr">43e225141bc08410e05799f4bd4bcbd0</sys_scope>
         <sys_update_name>sys_ui_page_300675051b68c410e05799f4bd4bcb3b</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-10-11 21:34:19</sys_updated_on>
+        <sys_updated_on>2023-11-29 14:31:05</sys_updated_on>
     </sys_ui_page>
 </record_update>

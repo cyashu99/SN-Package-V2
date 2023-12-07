@@ -25,7 +25,6 @@ SPR_AUTH_CALL.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
       var otaResponse = this.newItem('otaResponse');
 
       if (hasError) {
-        gs.info('SPR_AUTH_CALL SprinklrGetOTA error message: ' + response.getErrorMessage());
 
         otaResponse.setAttribute('argument', JSON.strinfigy({ errors: [{ message: response.getErrorMessage() }] }));
 
@@ -34,13 +33,11 @@ SPR_AUTH_CALL.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
 
       var responseBody = response.getBody();
 
-      gs.info('SPR_AUTH_CALL message: ' + responseBody);
 
       otaResponse.setAttribute('argument', responseBody);
       return;
     } catch (e) {
       var errResponseBody = e.getMessage();
-
       gs.info('ERROR SPR_AUTH_CALL: ' + errResponseBody);
     }
   },
@@ -50,13 +47,13 @@ SPR_AUTH_CALL.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-05-12 10:09:05</sys_created_on>
         <sys_id>d0443c67dbdb0d103bb109c4e29619a8</sys_id>
-        <sys_mod_count>35</sys_mod_count>
+        <sys_mod_count>36</sys_mod_count>
         <sys_name>SPR_AUTH_CALL</sys_name>
         <sys_package display_value="Sprinklr" source="x_spri3_sprinklr">43e225141bc08410e05799f4bd4bcbd0</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Sprinklr">43e225141bc08410e05799f4bd4bcbd0</sys_scope>
         <sys_update_name>sys_script_include_d0443c67dbdb0d103bb109c4e29619a8</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-10-11 21:37:04</sys_updated_on>
+        <sys_updated_on>2023-12-07 19:10:57</sys_updated_on>
     </sys_script_include>
 </record_update>

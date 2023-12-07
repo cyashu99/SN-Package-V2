@@ -8,7 +8,6 @@
         <http_method>POST</http_method>
         <name>note</name>
         <operation_script><![CDATA[(function process(/*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {
-  gs.info("Step 1: Sprinklr API update case");
    var requestBody = request.body;
    var requestData = requestBody.data;
    var caseId = requestData.caseId;
@@ -19,12 +18,10 @@
    caseGR.addQuery('sys_id', caseId);
    caseGR.query();
    if (caseGR.next()) {
-        gs.info("Step 2: Sprinklr API update case with work_notes: " + work_notes);
        caseGR.work_notes = work_notes;
        sys_id = caseGR.sys_id;
        caseGR.update();
    }
-    gs.info("Step 3: Sprinklr update case completed");
    var strQuery = 'element=work_notes^element_idSTARTSWITH' + sys_id;
    var JournalGR = new GlideRecord('sys_journal_field');
    JournalGR.addEncodedQuery(strQuery);
@@ -32,10 +29,8 @@
    JournalGR.setLimit(1);
    JournalGR.query();
    if (JournalGR.next()) {
-        gs.info("Step 4: Sprinklr API update case with JournalGR: " + JournalGR.sys_id);
        journal_id = JournalGR.sys_id;
    }
-    gs.info("Step 5: Sprinklr API update case with journal_id: " + journal_id);
    var body = {};
    body.status = '200';
    body.caseId = sys_id;
@@ -57,14 +52,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-07-12 09:24:17</sys_created_on>
         <sys_id>d046b243db2c99503bb109c4e29619de</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_name>note</sys_name>
         <sys_package display_value="Sprinklr" source="x_spri3_sprinklr">43e225141bc08410e05799f4bd4bcbd0</sys_package>
         <sys_policy/>
         <sys_scope display_value="Sprinklr">43e225141bc08410e05799f4bd4bcbd0</sys_scope>
         <sys_update_name>sys_ws_operation_d046b243db2c99503bb109c4e29619de</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-10-11 10:30:16</sys_updated_on>
+        <sys_updated_on>2023-12-07 19:10:37</sys_updated_on>
         <web_service_definition display_value="Create Note">f7267243db2c99503bb109c4e2961931</web_service_definition>
         <web_service_version/>
     </sys_ws_operation>

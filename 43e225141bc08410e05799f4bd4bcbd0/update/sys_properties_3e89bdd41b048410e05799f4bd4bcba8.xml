@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sys_properties">
     <sys_properties action="INSERT_OR_UPDATE">
-        <choices>space-qa4,space-staging,space-prod0,space,space-prod2,space-prod3,space-prod4</choices>
+        <choices>space-qa4,space-qa6,space-staging,space-prod0,space,space-prod2,space-prod3,space-prod4</choices>
         <description>Sprinklr subdomain</description>
         <ignore_cache>false</ignore_cache>
         <is_private>false</is_private>
@@ -11,14 +11,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2019-09-18 14:30:39</sys_created_on>
         <sys_id>3e89bdd41b048410e05799f4bd4bcba8</sys_id>
-        <sys_mod_count>68</sys_mod_count>
+        <sys_mod_count>69</sys_mod_count>
         <sys_name>x_spri3_sprinklr.subdomain</sys_name>
         <sys_package display_value="Sprinklr" source="x_spri3_sprinklr">43e225141bc08410e05799f4bd4bcbd0</sys_package>
         <sys_policy/>
         <sys_scope display_value="Sprinklr">43e225141bc08410e05799f4bd4bcbd0</sys_scope>
         <sys_update_name>sys_properties_3e89bdd41b048410e05799f4bd4bcba8</sys_update_name>
-        <sys_updated_by>nayan.teja@sprinklr.com</sys_updated_by>
-        <sys_updated_on>2023-08-21 13:26:27</sys_updated_on>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-12-07 19:10:42</sys_updated_on>
         <type>string</type>
         <value>space-prod3-integrations</value>
         <write_roles/>
